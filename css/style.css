@@ -1,0 +1,26 @@
+:root{
+    --color-primario-verde400: hsl(172, 67%, 45%);
+
+    --color-neutral-verde900: hsl(183, 100%, 15%);
+    --color-neutral-gris500: hsl(186, 14%, 43%);
+    --color-neutral-gris400: hsl(184, 14%, 56%);
+    --color-neutral-gris200: hsl(185, 41%, 84%);
+    --color-neutral-gris50: hsl(189, 47%, 97%);
+    --color-neutral-blanco: hsl(0, 100%, 100%);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: "Space Mono", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+body {
+    background-color: var(--color-neutral-gris200);
+}
