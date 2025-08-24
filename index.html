@@ -23,44 +23,44 @@
     <div class="calculator_container">
       <!-- input bill -->
       <div class="bill_container">
-        <label for="bill">Bill</label>
-        <div class="dollar_icon">
+        <label for="bill" class="style">Bill</label>
+        <div class="container_icon">
           <img src="./images/icon-dollar.svg" alt="">
-          <input type="number" name="" id="bill" placeholder="0">
+          <input type="number" class="input_bill input" id="bill" placeholder="0">
         </div>
       </div>
       <!-- box button -->
       <div class="btn_container">
-        <p>Select Tip %</p>
+        <p class="style">Select Tip %</p>
         <div class="btn_grid">
-          <button>5%</button>
-          <button>10%</button>
-          <button>15%</button>
-          <button>25%</button>
-          <button>50%</button>
-          <input type="number" placeholder="Custom"></input>       
+          <button class="btn_i btn">5%</button>
+          <button class="btn_ii btn">10%</button>
+          <button class="btn_iii btn">15%</button>
+          <button class="btn_iv btn">25%</button>
+          <button class="btn_v btn">50%</button>
+          <input type="number" class="btn_ctm" placeholder="Custom"></input>       
         </div>
       </div>
       <!-- input people -->
-       <div >
-        <label for="people">Number of People</label>
+       <div class="">
+        <label for="people" class="style">Number of People</label>
         <p class="error">Can't be zero</p>
-        <div class="person_icon">
+        <div class="container_icon">
           <img src="./images/icon-person.svg" alt="">
-          <input type="number" id="people" placeholder="0">
+          <input type="number" class="input_people input" id="people" placeholder="0">
         </div>
        </div>
        <!-- resultado -->
         <div class="result_container"> 
-          <div>
-            <p>Tip Amount<br> / person</p>
-            <h2 id="amount">$0.00</h2>
+          <div class="container_amount">
+            <p class="result_p">Tip Amount<br> <span class="result_span">/ person</span></p>
+            <h2 id="amount" class="result_number">$0.00</h2>
           </div>
-          <div>
-            <p>Total<br> / person</p>
-            <h2 id="total">$0.00</h2>
+          <div class="container_total">
+            <p class="result_p">Total<br> <span class="result_span">/ person</span></p>
+            <h2 id="total" class="result_number">$0.00</h2>
           </div>
-          <button>Reset</button>
+          <button id="reset" class="btn_reset">Reset</button>
         </div>
     </div>
   </main>  
