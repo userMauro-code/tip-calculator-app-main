@@ -46,8 +46,10 @@
       </div>
       <!-- input people -->
        <div class="">
-        <label for="people" class="style">Number of People</label>
-        <p class="error">Can't be zero</p>
+        <div class="container_error">
+          <label for="people" class="style">Number of People</label>
+          <p class="error">Can't be zero</p>
+        </div>
         <div class="container_icon">
           <img src="./images/icon-person.svg" alt="">
           <input type="number" class="input_people input" id="people" placeholder="0">
@@ -55,7 +57,10 @@
        </div>
        </div>
        <!-- resultado -->
-        <div class="result_container"> 
+        <div class="result_container">
+          <div class="result_flex">
+
+           
           <div class="container_amount">
             <p class="result_p">Tip Amount<br> <span class="result_span">/ person</span></p>
             <h2 id="amount" class="result_number">$0.00</h2>
@@ -63,6 +68,7 @@
           <div class="container_total">
             <p class="result_p">Total<br> <span class="result_span">/ person</span></p>
             <h2 id="total" class="result_number">$0.00</h2>
+          </div>
           </div>
           <button id="reset" class="btn_reset">Reset</button>
         </div>
