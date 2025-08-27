@@ -113,6 +113,7 @@ body {
     border: none;
     border-radius: .2em;
     height: 2em;
+    
 }
 
 .btn:focus {
@@ -124,15 +125,22 @@ body {
     border: none;
     background-color: var(--color-neutral-gris50);
     border-radius: .2em;
+    
 }
 
 .btn_ctm::placeholder {
     font-family: "Space mono";
-    font-size: 1.7em;
+    font-size: 1.5em;
     font-weight: 700;
     color: var(--color-neutral-gris500);
     text-align: center; 
 }
+
+/* .btn_ctm[type=number] {
+    font-size: 1em;
+    text-align: center;
+    padding-right: 1em;
+} */
 
 .btn_ctm:focus {
     outline: none;
@@ -239,12 +247,7 @@ body {
         cursor: pointer;
     }
 
-     
-    .input[type=number]::-webkit-inner-spin-button,
-    .input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
     
-}
 
     .input_people:hover {
         cursor: pointer;
