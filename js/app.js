@@ -6,7 +6,7 @@ const inputCustom = document.querySelector('.btn_ctm');
 const amount = document.getElementById('amount');
 const total = document.getElementById('total');
 const btnReset = document.getElementById('reset');
-const alertError = document.querySelector('error');
+const alertError = document.querySelector('.error');
 
 let bill = 0;
 let tip = 0;
@@ -16,7 +16,6 @@ const money = (n) => `$${n.toFixed(2)}`;
 
 function showError (){
     alertError.style.display= 'block';
-    alertError.style.border= '1px solid rgb(221, 123, 11);'
     inputPeople.classList.add('has-error');
     amount.textContent = '$0.00';
     total.textContent = '$0.00';
@@ -37,7 +36,7 @@ function recalc () {
 
     const tipTotal = bill * tip;
     const tipPerPerson = tipTotal / people;
-    const totalPerPerson = (bill + tipTotal / people);
+    const totalPerPerson = (bill + tipTotal) / people;
 
     amount.textContent = money(tipPerPerson);
     total.textContent = money(totalPerPerson);
@@ -45,4 +44,55 @@ function recalc () {
     btnReset.disabled = (bill === 0 && tip === 0 && people === 1)
 };
 
+inputBill.addEventListener('input', () => {
+    bill = Number(inputBill.value) || 0;
+    recalc();
+});
+
+inputPeople.addEventListener('input', ()=> {
+    people = Number(inputPeople.value) || 0;
+    recalc();
+});
+
+function clearActiveButtons () {
+    buttonsDesc.forEach(b => b.classList.remove('btn--active'));
+}
+
+buttonsDesc.forEach(btn => {
+    btn.addEventListener('click', () => {
+        clearActiveButtons();
+        btn.classList.add('btn--active');
+        inputCustom.value = '';
+
+        const percent = parseFloat(btn.textContent);
+        tip =(isNaN(percent) ? 0 : percent /100);
+
+        recalc();
+    });
+});
+
+inputCustom.addEventListener('input', () => {
+    clearActiveButtons();
+
+    const percent = Number(inputCustom.value) || 0;
+    tip = percent / 100;
+    recalc();
+});
+
+btnReset.addEventListener('click', () => {
+    inputBill.value = '';
+    inputPeople.value = '';
+    inputCustom.value = '';
+    clearActiveButtons();
+
+    bill = 0;
+    tip = 0;
+    people = 0;
+
+    amount.textContent = '$0.00';
+    total.textContent = '$0.00';
+
+    hideError();
+    btnReset.disabled = true;
+})
 
