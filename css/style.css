@@ -210,6 +210,10 @@ body {
     color: var(--color-primario-verde400);
 }
 
+.has-error[type = number] {
+    border: 1px solid rgb(221, 123, 11);
+}
+
 @media(min-width: 1080px) {
     .calculator_container {
         display: flex;
